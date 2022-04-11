@@ -27,4 +27,15 @@ public class Infografika {
         this.GraphicHeight = (GraphicHeightMatcher.find()) ? GraphicHeightMatcher.group(1) : "";
     }
 
+    @Override
+    public String toString() {
+        return "\nInfografika: "
+                + "\ntytuł: " + title
+                + "\nadres strony: " + addressUrl
+                + "\nadres grafiki: " + graphicUrl
+                + "\nadres miniatury: " + thumbNailUrl
+                + "\nwymiary: "  + GraphicWidth + " x " + GraphicHeight;
+    }
+
+
 }
