@@ -1,6 +1,7 @@
 package pl.lublin.wsei.java.cwiczenia.lab2;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -9,12 +10,13 @@ import java.util.stream.Collectors;
 
 public class GusInfographicList {
     List<String> items;
- //   List<Infografika> infographics;
+    List<Infografika> infographics;
     String fileContent;
 
     public GusInfographicList(String fileName) {
         readFile(fileName);
         divideContentToItems();
+        createInfographic();
     }
 
     public String getRandomItem() {
@@ -45,6 +47,12 @@ public class GusInfographicList {
                 .filter(m -> m.group(1) != null)
                 .map(m -> m.group(1))
                 .collect(Collectors.toList());
+    }
+    private void createInfographic() {
+        infographics = new ArrayList<>();
+        for (String item : items) {
+            infographics.add(new Infografika(item));
+        }
     }
 
 }
