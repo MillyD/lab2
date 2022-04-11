@@ -2,6 +2,7 @@ package pl.lublin.wsei.java.cwiczenia.lab2;
 
 import java.io.*;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -14,6 +15,11 @@ public class GusInfographicList {
     public GusInfographicList(String fileName) {
         readFile(fileName);
         divideContentToItems();
+    }
+
+    public String getRandomItem() {
+        Random random = new Random();
+        return items.get(random.nextInt(items.size()-1));
     }
 
 
