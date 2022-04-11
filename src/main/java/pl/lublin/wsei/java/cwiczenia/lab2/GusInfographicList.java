@@ -23,7 +23,11 @@ public class GusInfographicList {
         Random random = new Random();
         return items.get(random.nextInt(items.size()-1));
     }
-
+    public void getInfographicsList(){
+        for(Infografika f : infographics){
+            System.out.println(f);
+        }
+    }
 
     private void readFile(String fileName){
         StringBuilder resultStringBuilder = new StringBuilder();
